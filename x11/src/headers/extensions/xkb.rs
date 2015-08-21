@@ -2,8 +2,5 @@
 // The X11 libraries are available under the MIT license.
 // These bindings are public domain.
 
-mod xkb;
-mod xkbstr;
-
-pub use self::xkb::*;
-pub use self::xkbstr::*;
+pub const XkbMaxLegalKeyCode: usize = 255;
+pub const XkbPerKeyBitArraySize: usize = ((XkbMaxLegalKeyCode + 1) / 8);

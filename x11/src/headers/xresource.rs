@@ -4,6 +4,7 @@
 
 use libc::*;
 use headers::x::*;
+use headers::xlib::*;
 
 pub type XrmBinding = c_int; // enum
 pub type XrmBindingList = *mut XrmBinding;

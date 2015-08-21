@@ -4,6 +4,7 @@
 
 use libc::*;
 use headers::x::*;
+use headers::xlib::*;
 
 #[derive(Clone, Copy, Debug, Default)]
 #[repr(C)]
@@ -56,4 +57,30 @@ pub struct XSizeHints {
   pub base_width: c_int,
   pub base_height: c_int,
   pub win_gravity: c_int,
+}
+
+#[derive(Clone, Copy, Debug, Default)]
+#[repr(C)]
+pub struct XIconSize {
+  pub min_width: c_int,
+  pub min_height: c_int,
+  pub max_width: c_int,
+  pub max_height: c_int,
+  pub width_inc: c_int,
+  pub height_inc: c_int,
+}
+
+#[derive(Clone, Copy, Debug, Default)]
+#[repr(C)]
+pub struct XStandardColormap {
+  pub colormap: Colormap,
+  pub red_max: c_ulong,
+  pub red_mult: c_ulong,
+  pub green_max: c_ulong,
+  pub green_mult: c_ulong,
+  pub blue_max: c_ulong,
+  pub blue_mult: c_ulong,
+  pub base_pixel: c_ulong,
+  pub visualid: VisualID,
+  pub killid: XID,
 }

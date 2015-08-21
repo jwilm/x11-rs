@@ -2,8 +2,8 @@
 // The X11 libraries are available under the MIT license.
 // These bindings are public domain.
 
-mod xkb;
-mod xkbstr;
+use libc::*;
+use headers::x::*;
 
-pub use self::xkb::*;
-pub use self::xkbstr::*;
+// TODO: union of many other structs
+pub enum xEvent {}

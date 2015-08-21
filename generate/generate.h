@@ -1,5 +1,14 @@
 #pragma once
 
+struct GENERATE_off_t {};
+struct GENERATE_ptrdiff_t {};
+struct GENERATE_size_t {};
+struct GENERATE_ssize_t {};
+#define off_t GENERATE_off_t
+#define ptrdiff_t GENERATE_ptrdiff_t
+#define size_t GENERATE_size_t
+#define ssize_t GENERATE_ssize_t
+
 #include <iostream>
 #include <string>
 
@@ -92,6 +101,26 @@ struct Type<float> {
 template<>
 struct Type<double> {
   static std::string name () { return "c_double"; }
+};
+
+template<>
+struct Type<off_t> {
+  static std::string::name () { return "off_t"; }
+};
+
+template<>
+struct Type<ptrdiff_t> {
+  static std::string::name () { return "ptrdiff_t"; }
+};
+
+template<>
+struct Type<size_t> {
+  static std::string::name () { return "size_t"; }
+};
+
+template<>
+struct Type<ssize_t> {
+  static std::string::name () { return "ssize_t"; }
 };
 
 template<>
